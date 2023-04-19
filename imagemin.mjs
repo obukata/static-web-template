@@ -9,7 +9,7 @@ import svgo from 'imagemin-svgo'
 keepfolder(['dist/assets/images/**/*.{jpg,png,gif,svg}'], {
   plugins: [
     mozjpeg({ quality: 75 }),
-    pngquant({ quality: 75 }),
+    pngquant({ quality: [0.75, 1] }),
     gifsicle(),
     svgo()
     // webp({ quality: 50 })
