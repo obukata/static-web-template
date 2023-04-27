@@ -1,13 +1,5 @@
 {
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "path-autocomplete.pathMappings": {
+    "/": "${workspace}/src"
   },
-  "[css]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
-  },
-  "editor.quickSuggestions": {
-    "comments": "on",
-    "strings": "on"
-  },
-  "editor.formatOnSave": true,
 }

@@ -1,14 +1,13 @@
 {
   "name": "static-web-template",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
-  "main": "index.js",
   "engines": {
     "node": "18.x"
   },
   "scripts": {
     "dev": "run-p watch:postcss watch:dev",
-    "build": "run-s build:reset build:copy delete:all build:imagemin build:postcss watch:build",
+    "build": "run-s build:reset build:copy delete:all build:imagemin build:postcss build:format watch:build",
     "watch:postcss": "postcss src/assets/_postcss/main.css -o src/assets/styles/main.css --watch",
     "watch:dev": "browser-sync start --server 'src' --watch 'src/**/*'",
     "watch:build": "browser-sync start --server 'dist' --watch 'dist/**/*'",
@@ -20,14 +19,14 @@
     "delete:pattern3": "rimraf -g dist/_*",
     "delete:pattern4": "rimraf -g dist/_*.*",
     "build:imagemin": "node imagemin.mjs --initial",
-    "build:postcss": "postcss src/assets/_postcss/main.css -o src/assets/styles/main.css"
+    "build:postcss": "postcss src/assets/_postcss/main.css -o src/assets/styles/main.css",
+    "build:format": "eslint dist --fix && prettier --write dist && markuplint dist/**/*.html"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/forms": "^0.5.3",
-    "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.9",
     "autoprefixer": "^10.4.2",
     "browser-sync": "^2.27.7",
@@ -37,6 +36,8 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-tailwindcss": "^3.11.0",
+    "heroicons": "^2.0.16",
     "imagemin-cli": "^7.0.0",
     "imagemin-gifsicle": "^7.0.0",
     "imagemin-keep-folder": "^5.3.2",
@@ -53,13 +54,12 @@
     "postcss-mixins": "^9.0.1",
     "postcss-preset-env": "^7.8.3",
     "postcss-simple-vars": "^6.0.3",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "prettier-eslint": "^15.0.1",
     "prettier-eslint-cli": "^7.1.0",
-    "prettier-plugin-tailwindcss": "^0.2.5",
+    "prettier-plugin-tailwindcss": "^0.2.7",
     "rimraf": "^4.1.2",
-    "tailwindcss": "^3.0.22",
-    "tailwindcss-font-size": "^1.0.0",
-    "heroicons": "^2.0.16"
+    "tailwindcss": "^3.3.2",
+    "tailwindcss-font-size": "^1.0.0"
   }
 }

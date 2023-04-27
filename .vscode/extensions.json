@@ -2,7 +2,6 @@
   "recommendations": [
     "editorconfig.editorconfig",
     "dbaeumer.vscode-eslint",
-    "esbenp.prettier-vscode",
     "vunguyentuan.vscode-postcss",
     "fabiospampinato.vscode-highlight",
     "sonarsource.sonarlint-vscode",
