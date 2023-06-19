@@ -15,7 +15,7 @@
     "build:reset": "rimraf dist",
     "build:copy": "cpx 'src/**/*' 'dist'",
     "glob": "node glob-copyfile.js",
-    "copy": "cpx `glob 'src/!(_*)/!(_*)'` 'dist'",
+    "copy": "cpx 'src' 'dist'",
     "delete:all": "run-s delete:pattern1 delete:pattern2 delete:pattern3 delete:pattern4",
     "delete:pattern1": "rimraf -g dist/**/_*",
     "delete:pattern2": "rimraf -g dist/**/_*.*",
