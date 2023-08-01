@@ -1,14 +1,12 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true
+    es2021: true,
   },
-  extends: [
-    'standard',
-    'plugin:tailwindcss/recommended'
-  ],
+  extends: ['standard', 'eslint-config-prettier'],
   parserOptions: {
-    ecmaVersion: 'latest'
+    ecmaVersion: 'latest',
   },
-  rules: {}
+  // 外部ライブラリなどは「js/lib」ディレクトリ下などに配置される事を想定。これを除外。
+  ignorePatterns: ['**/lib/*.js'],
 }

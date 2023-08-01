@@ -1,6 +1,17 @@
 module.exports = {
   content: ['./**/*.{html, js, css}'],
   theme: {
+    screens: {
+      xl: '1700px',
+      lg: '1400px',
+      pc: '1240px',
+      md: '960px',
+      tb: '768px',
+      sm: '600px',
+      sp: '414px',
+      xs: '374px',
+      min: '320px'
+    },
     fontFamily: {
       sans: ['fontname', 'sans-serif']
     },
@@ -41,6 +52,7 @@ module.exports = {
 
   plugins: [
     require('@tailwindcss/typography'),
+    require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/forms')({
       strategy: 'base'
