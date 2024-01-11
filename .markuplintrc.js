@@ -29,6 +29,7 @@ module.exports = {
         ],
       },
     },
+    "require-accessible-name": false
   },
   extends: ['markuplint:recommended'],
 }
