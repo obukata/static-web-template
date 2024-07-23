@@ -1,0 +1,20 @@
+:root {
+  --header-height: 125px;
+  --header-contents-gutter: 80px;
+}
+@media (max-width: $md) {
+  :root {
+    --header-height: 94px;
+    --header-contents-gutter: 60px;
+  }
+}
+@media (max-width: $tb) {
+  :root {
+    --header-height: 76px;
+    --header-contents-gutter: 40px;
+  }
+}
+
+.link-anchor {
+  @apply -mt-[calc(var(--header-height)+var(--header-contents-gutter))] pt-[calc(var(--header-height)+var(--header-contents-gutter))] pointer-events-none
+}
