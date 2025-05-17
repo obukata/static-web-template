@@ -7,6 +7,7 @@ module.exports = {
       xl: '1700px',
       lg: '1400px',
       pc: '1240px',
+      ltb: '1024px',
       md: '960px',
       tb: '768px',
       sm: '600px',
@@ -15,7 +16,8 @@ module.exports = {
       min: '320px'
     },
     fontFamily: {
-      sans: ['fontname', 'sans-serif']
+      sans: ['Noto Sans JP', 'sans-serif'],
+      corporate: ['CorporateLogoBold', 'sans-serif']
     },
     transitionTimingFunction: {
       'in-quad': 'cubic-bezier(0.550,  0.085, 0.680, 0.530)',
@@ -47,8 +49,32 @@ module.exports = {
       colors: {
         pdf: '#b30c00',
         excel: '#117e43',
-        word: '#1c58bd'
-      }
+        word: '#1c58bd',
+      },
+      animation: {
+        'pop-up': 'popUp  forwards 300ms ease-out',
+        'pop-out': 'popOut  forwards 200ms ease-out',
+        'slide-in': 'slideIn forwards 500ms ease-out',
+        'slide-up': 'slideUp forwards 500ms ease-out',
+      },
+      keyframes: {
+        popUp: {
+          '0%': { opacity: 0, transform: 'scale(1.5)' },
+          '100%': { opacity: 1, transform: 'scale(1)' }
+        },
+        popOut: {
+          '0%': { opacity: 1, transform: 'translateX(0%)' },
+          '100%': { opacity: 0, transform: 'translateX(0%)' }
+        },
+        slideIn: {
+          '0%': { opacity: 0, transform: 'translateY(-100%)' },
+          '100%': { opacity: 1, transform: 'translateY(0%)' }
+        },
+        slideUp: {
+          '0%': { opacity: 1, transform: 'translateY(0%)' },
+          '100%': { opacity: 0, transform: 'translateY(-100%)' }
+        }
+      },
     }
   },
 

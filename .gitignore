@@ -18,7 +18,7 @@ $RECYCLE.BIN/
 
 ## project file ##
 dist
-src/assets/styles
+src/assets/styles/main.css
 node_modules
 package-lock.json
 
