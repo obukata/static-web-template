@@ -1,0 +1,33 @@
+body {
+  @apply text-black;
+}
+:root {
+  --scaling: 1;
+  --header-height: calc(96px + (20px * var(--scaling)));
+  --header-contents-gutter: 80px;
+}
+html {
+  @apply scroll-smooth
+}
+body {
+  font-feature-settings: "palt";
+  @apply text-[length:calc(1rem*var(--scaling))]
+}
+.page__wrap {
+  @apply overflow-hidden
+}
+@media (max-width: $md) {
+  :root {
+    --scaling: 0.875;
+  }
+}
+@media (max-width: $tb) {
+  :root {
+    --scaling: calc(0.875 * 0.923);
+  }
+}
+@media (max-width: $sm) {
+  :root {
+    --scaling: calc(0.875 * 0.923 * 0.928);
+  }
+}

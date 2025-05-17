@@ -1,20 +1,39 @@
 :root {
-  --header-height: 125px;
+  --header-height: 88px;
   --header-contents-gutter: 80px;
 }
-@media (max-width: $md) {
+@media (width <= $pc) {
   :root {
-    --header-height: 94px;
+    --header-height: 82px;
+  }
+}
+@media (width <= $md) {
+  :root {
+    --header-height: 86.88px;
     --header-contents-gutter: 60px;
   }
 }
-@media (max-width: $tb) {
+@media (width <= $tb) {
   :root {
-    --header-height: 76px;
     --header-contents-gutter: 40px;
   }
 }
+@media (width <= $sm) {
+  :root {
+    --header-contents-gutter: 20px;
+  }
+}
+
 
 .link-anchor {
   @apply -mt-[calc(var(--header-height)+var(--header-contents-gutter))] pt-[calc(var(--header-height)+var(--header-contents-gutter))] pointer-events-none
+}
+
+.link-underline {
+  @apply text-red-500 border-red-500 underline hover:no-underline hover:text-red-500 duration-300;
+}
+:where(.link-underline) {
+  &[data-type="black"] {
+    @apply text-black border-black hover:text-black/50
+  }
 }
